@@ -10,20 +10,20 @@ import { useMemo } from "react";
 
 const COLORS = [
   "hsl(199, 89%, 48%)",
-  "hsl(160, 84%, 39%)",
-  "hsl(280, 65%, 60%)",
-  "hsl(38, 92%, 50%)",
-  "hsl(0, 84%, 60%)",
-  "hsl(330, 80%, 60%)",
-  "hsl(220, 70%, 55%)",
-  "hsl(50, 90%, 50%)",
+  "hsl(28, 90%, 55%)",
+  "hsl(199, 70%, 60%)",
+  "hsl(28, 80%, 65%)",
+  "hsl(199, 60%, 40%)",
+  "hsl(28, 70%, 45%)",
+  "hsl(199, 50%, 55%)",
+  "hsl(28, 60%, 58%)",
 ];
 
 const tooltipStyle = {
-  backgroundColor: "hsl(217, 33%, 17%)",
-  border: "1px solid hsl(217, 33%, 25%)",
+  backgroundColor: "hsl(0, 0%, 100%)",
+  border: "1px solid hsl(214, 20%, 88%)",
   borderRadius: "8px",
-  color: "hsl(210, 40%, 98%)",
+  color: "hsl(220, 25%, 15%)",
   fontSize: "12px",
 };
 
@@ -66,9 +66,9 @@ export function IntensityBySectorChart({ data }: ChartsProps) {
       <h3 className="text-sm font-semibold text-muted-foreground mb-4 uppercase tracking-wider">Avg Intensity by Sector</h3>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={chartData} margin={{ left: -10 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="hsl(217, 33%, 22%)" />
-          <XAxis dataKey="name" tick={{ fontSize: 10, fill: "hsl(215, 20%, 55%)" }} angle={-35} textAnchor="end" height={80} />
-          <YAxis tick={{ fontSize: 11, fill: "hsl(215, 20%, 55%)" }} />
+          <CartesianGrid strokeDasharray="3 3" stroke="hsl(214, 20%, 88%)" />
+          <XAxis dataKey="name" tick={{ fontSize: 10, fill: "hsl(215, 15%, 45%)" }} angle={-35} textAnchor="end" height={80} />
+          <YAxis tick={{ fontSize: 11, fill: "hsl(215, 15%, 45%)" }} />
           <Tooltip contentStyle={tooltipStyle} />
           <Bar dataKey="value" radius={[6, 6, 0, 0]}>
             {chartData.map((_, i) => (
@@ -113,9 +113,9 @@ export function RegionAreaChart({ data }: ChartsProps) {
               <stop offset="95%" stopColor="hsl(199, 89%, 48%)" stopOpacity={0} />
             </linearGradient>
           </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="hsl(217, 33%, 22%)" />
-          <XAxis dataKey="name" tick={{ fontSize: 10, fill: "hsl(215, 20%, 55%)" }} angle={-35} textAnchor="end" height={80} />
-          <YAxis tick={{ fontSize: 11, fill: "hsl(215, 20%, 55%)" }} />
+          <CartesianGrid strokeDasharray="3 3" stroke="hsl(214, 20%, 88%)" />
+          <XAxis dataKey="name" tick={{ fontSize: 10, fill: "hsl(215, 15%, 45%)" }} angle={-35} textAnchor="end" height={80} />
+          <YAxis tick={{ fontSize: 11, fill: "hsl(215, 15%, 45%)" }} />
           <Tooltip contentStyle={tooltipStyle} />
           <Area type="monotone" dataKey="value" stroke="hsl(199, 89%, 48%)" fill="url(#colorRelevance)" strokeWidth={2} />
         </AreaChart>
@@ -131,10 +131,10 @@ export function PestleRadarChart({ data }: ChartsProps) {
       <h3 className="text-sm font-semibold text-muted-foreground mb-4 uppercase tracking-wider">Likelihood by PESTLE</h3>
       <ResponsiveContainer width="100%" height={300}>
         <RadarChart data={chartData}>
-          <PolarGrid stroke="hsl(217, 33%, 22%)" />
-          <PolarAngleAxis dataKey="name" tick={{ fontSize: 10, fill: "hsl(215, 20%, 55%)" }} />
-          <PolarRadiusAxis tick={{ fontSize: 10, fill: "hsl(215, 20%, 55%)" }} />
-          <Radar dataKey="value" stroke="hsl(160, 84%, 39%)" fill="hsl(160, 84%, 39%)" fillOpacity={0.3} strokeWidth={2} />
+          <PolarGrid stroke="hsl(214, 20%, 88%)" />
+          <PolarAngleAxis dataKey="name" tick={{ fontSize: 10, fill: "hsl(215, 15%, 45%)" }} />
+          <PolarRadiusAxis tick={{ fontSize: 10, fill: "hsl(215, 15%, 45%)" }} />
+          <Radar dataKey="value" stroke="hsl(28, 90%, 55%)" fill="hsl(28, 90%, 55%)" fillOpacity={0.3} strokeWidth={2} />
           <Tooltip contentStyle={tooltipStyle} />
         </RadarChart>
       </ResponsiveContainer>
@@ -149,9 +149,9 @@ export function CountryBarChart({ data }: ChartsProps) {
       <h3 className="text-sm font-semibold text-muted-foreground mb-4 uppercase tracking-wider">Top Countries by Records</h3>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={chartData} layout="vertical" margin={{ left: 20 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="hsl(217, 33%, 22%)" />
-          <XAxis type="number" tick={{ fontSize: 11, fill: "hsl(215, 20%, 55%)" }} />
-          <YAxis dataKey="name" type="category" tick={{ fontSize: 10, fill: "hsl(215, 20%, 55%)" }} width={120} />
+          <CartesianGrid strokeDasharray="3 3" stroke="hsl(214, 20%, 88%)" />
+          <XAxis type="number" tick={{ fontSize: 11, fill: "hsl(215, 15%, 45%)" }} />
+          <YAxis dataKey="name" type="category" tick={{ fontSize: 10, fill: "hsl(215, 15%, 45%)" }} width={120} />
           <Tooltip contentStyle={tooltipStyle} />
           <Bar dataKey="value" radius={[0, 6, 6, 0]}>
             {chartData.map((_, i) => (
@@ -187,7 +187,7 @@ export function SourceTreemap({ data }: ChartsProps) {
           data={chartData}
           dataKey="value"
           nameKey="name"
-          stroke="hsl(217, 33%, 25%)"
+          stroke="hsl(214, 20%, 88%)"
           content={<CustomTreemapContent />}
         />
       </ResponsiveContainer>
